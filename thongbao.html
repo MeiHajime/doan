@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông báo</title>
+    <link rel="stylesheet" href="./Thongbao/style.css" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+  <header class="bg-info py-3">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-3 d-flex align-items-center">
+          <a href="doannhom9.html">
+            <img src="./footerandheaderimages/LOGOWEB.png" alt="Logo" class="img-fluid" style="height: 150px;">
+          </a>
+        </div>
+  
+        <div class="col-12 col-md-6 my-2 my-md-0 d-flex align-items-center justify-content-md-center">
+          <div class="input-group">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-grid-3x3-gap"></i>
+              </button>
+              <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="doannhom9.html">Trang chủ</a></li>
+                  <li class="dropdown-submenu">
+                      <a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cửa hàng</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="cuahang.html">Cửa hàng</a></li>
+                        <li><a class="dropdown-item" href="xuhuongmuasam.html">Xu hướng mua sắm - Theo ngày</a></li>
+                        <li><a class="dropdown-item" href="xuhuongmuasam.html">Xu hướng mua sắm - Sách hot-Giảm sâu</a></li>
+                        <li><a class="dropdown-item" href="bangxh.html">Bảng xếp hạng</a></li>
+                        <li><a class="dropdown-item" href="muahang.html">Mua hàng</a></li>
+                      </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="gioithieu.html">Giới thiệu</a></li>
+              </ul>
+              <input type="text" class="form-control" placeholder="Write something here..." aria-label="Search">
+              <button class="btn btn-danger" type="button">Search</button>
+          </div>
+      </div>
+
+  
+        <div class="col-12 col-md-3 d-flex justify-content-md-end justify-content-center mt-2 mt-md-0">
+          <div class="text-center me-3">
+            <a href="thongbao.html" class="text-decoration-none text-dark">
+              <i class="bi bi-bell fs-4"></i>
+              <p class="mb-0 small">Thông báo</p>
+            </a>
+          </div>
+          <div class="text-center me-3">
+            <a href="giohang.html" class="text-decoration-none text-dark">
+              <i class="bi bi-bag fs-4"></i>
+              <p class="mb-0 small">Giỏ hàng</p>
+            </a>
+          </div>
+          <div class="text-center">
+            <a href="dangnhapdangki.html" class="text-decoration-none text-dark">
+              <i class="bi bi-person fs-4"></i>
+              <p class="mb-0 small">Tài khoản</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <main class="container my-5">
+        <h1 class="text-center mb-4">THÔNG BÁO</h1>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="mb-3">Thông báo mới nhất</h2>
+                <div id="notificationList" class="list-group">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2 class="mb-3">Bộ lọc</h2>
+                <div class="list-group">
+                    <button type="button" class="list-group-item list-group-item-action active" data-filter="all">Tất cả</button>
+                    <button type="button" class="list-group-item list-group-item-action" data-filter="sale">Khuyến mãi</button>
+                    <button type="button" class="list-group-item list-group-item-action" data-filter="payment">Thanh toán</button>
+                    <button type="button" class="list-group-item list-group-item-action" data-filter="system">Hệ thống</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="bg-secondary text-white py-4">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0 d-flex align-items-center">
+              <i class="bi bi-envelope-fill fs-4 me-2"></i>
+              <span class="fw-semibold">ĐĂNG KÝ NHẬN BẢN TIN</span>
+            </div>
+      
+            <div class="col-md-8">
+              <form class="d-flex justify-content-center justify-content-md-end align-items-center">
+                <input
+                  type="email"
+                  class="form-control form-control-lg mb-2 mb-md-0 text-white"
+                  placeholder="Nhập địa chỉ email của bạn"
+                  aria-label="Email"
+                  aria-describedby="emailHelp"
+                  name="email"
+                  id="email"
+                  required
+                />
+                <button class="btn btn-orange btn-sm px-4" type="submit">Đăng ký</button>
+              </form>
+              <div id="thankYouMessage" class="mt-2 text-center text-white" style="display: none;">
+                Cảm ơn bạn đã đăng ký nhận bản tin của chúng tôi!
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    
+    <footer class="py-4" style="background-color: white;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <img src="./footerandheaderimages/LOGOWEB.png" alt="Logo" class="img-fluid mb-3" style="max-width: 100%;">
+              <p class="text-muted">
+                Phòng học B3 303, Toà nhà B, Đại Học Vinh, TP Vinh, Nghệ An. Địa chỉ 182 Lê Duẩn, Bến Thuỷ, Nghệ An.
+              </p>
+              <p class="text-muted">
+                Group9ThreeGuys.com nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống cửa hàng trên toàn quốc.
+              </p>
+              <div class="d-flex gap-2">
+                <a href="#"><img src="./footerandheaderimages/googleplayicon.png" alt="Google Play" style="height: 40px;"></a>
+                <a href="#"><img src="./footerandheaderimages/ appstoreicon.png" alt="App Store" style="height: 40px;"></a>
+              </div>
+            </div>
+      
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-6 col-md-3">
+                  <h5 class="fw-bold mb-3">Dịch vụ</h5>
+                  <ul class="list-unstyled text-muted">
+                    <li><a href="dieukhoandichvu.html" class=" text-decoration-none">Điều khoản sử dụng</a></li>
+                    <li><a href="chinhsachbaomat.html" class=" text-decoration-none">Chính sách bảo mật</a></li>
+                    <li><a href="chinhsachthanhtoan.html" class=" text-decoration-none">Chính sách thanh toán</a></li>
+                    <li><a href="gioithieu.html" class=" text-decoration-none">Giới thiệu về cửa hàng</a></li>
+                    <li><a href="gioithieu.html" class=" text-decoration-none">Hệ thống trung tâm mua bán</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-6 col-md-3">
+                  <h5 class="fw-bold mb-3">Hỗ trợ</h5>
+                  <ul class="list-unstyled text-muted">
+                    <li><a href="chinhsachdoitrahoantien.html" class=" text-decoration-none">Chính sách đổi - trả - hoàn tiền</a></li>
+                    <li><a href="chinhsachdoitrahoantien.html" class=" text-decoration-none">Chính sách bảo hành - bồi hoàn</a></li>
+                    <li><a href="chinhsachbaomat.html" class=" text-decoration-none">Chính sách vận chuyển</a></li>
+                    <li><a href="chinhsachthanhtoan.html" class=" text-decoration-none">Chính sách khách sỉ</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-6 col-md-3">
+                  <h5 class="fw-bold mb-3">Tài khoản của tôi</h5>
+                  <ul class="list-unstyled text-muted">
+                    <li><a href="dangnhapdangki.html" class=" text-decoration-none">Đăng nhập/Tạo mới tài khoản</a></li>
+                    <li><a href="gioithieu.html" class=" text-decoration-none">Thay đổi địa chỉ khách hàng</a></li>
+                    <li><a href="gioithieu.html" class=" text-decoration-none">Chi tiết tài khoản</a></li>
+                    <li><a href="chinhsachbaomat.html" class=" text-decoration-none">Lịch sử mua hàng</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-12 col-md-3">
+                  <h5 class="fw-bold mb-3">Liên hệ</h5>
+                  <ul class="list-unstyled text-muted">
+                    <li><i class="bi bi-geo-alt-fill"></i> 182 Lê Duẩn, Bến Thuỷ, Vinh, Nghệ An</li>
+                    <li><i class="bi bi-envelope-fill"></i> dogeinabath2005@gmail.com</li>
+                    <li><i class="bi bi-telephone-fill"></i> 0369769365</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="col-md-12 mt-4">
+                <h5 class="fw-bold mb-3">Vị trí của chúng tôi</h5>
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.110234938366!2d105.69317477437131!3d18.659048664931326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3139cddf0bf20f23%3A0x86154b56a284fa6d!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBWaW5o!5e0!3m2!1svi!2s!4v1736414738893!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+              <div class="mt-4">
+                <h5 class="fw-bold mb-3">Hỗ trợ thanh toán</h5>
+                <div class="d-flex flex-wrap gap-3">
+                  <img src="./footerandheaderimages/mastercard.png" alt="Mastercard" style="height: 49px;">
+                  <img src="./footerandheaderimages/ visa.png" alt="Visa" style="height: 49px;">
+                  <img src="./footerandheaderimages/vnpay.png" alt="VNPay" style="height: 49px;">
+                  <img src="./footerandheaderimages/momo.png" alt="MoMo" style="height: 49px;">
+                  <img src="./footerandheaderimages/ shopee.png" alt="Shopee Pay" style="height: 49px;">
+                </div>
+              </div>
+      
+              <div class="mt-4">
+                <h5 class="fw-bold mb-3">Mạng xã hội</h5>
+                <div class="d-flex gap-3">
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const notifications = [
+            { type: 'sale', icon: 'bi-tag-fill', message: 'Giảm giá 30% cho tất cả sách văn học!' },
+            { type: 'sale', icon: 'bi-gift-fill', message: 'Mua 2 tặng 1 cho sách thiếu nhi' },
+            { type: 'payment', icon: 'bi-credit-card-fill', message: 'Thanh toán thành công đơn hàng #12345' },
+            { type: 'payment', icon: 'bi-cash-coin', message: 'Hoàn tiền thành công cho đơn hàng #67890' },
+            { type: 'system', icon: 'bi-info-circle-fill', message: 'Cập nhật chính sách đổi trả mới' },
+            { type: 'system', icon: 'bi-exclamation-triangle-fill', message: 'Bảo trì hệ thống vào ngày 1/1/2025' }
+        ];
+
+        function generateRandomNotification() {
+            const randomIndex = Math.floor(Math.random() * notifications.length);
+            const notification = notifications[randomIndex];
+            const date = new Date();
+            const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
+
+            return `
+                <a href="#" class="list-group-item list-group-item-action" data-type="${notification.type}">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1"><i class="bi ${notification.icon} me-2"></i>${notification.message}</h5>
+                        <small>${formattedDate}</small>
+                    </div>
+                </a>
+            `;
+        }
+
+        function addNotifications(count) {
+            const notificationList = document.getElementById('notificationList');
+            for (let i = 0; i < count; i++) {
+                notificationList.innerHTML += generateRandomNotification();
+            }
+        }
+
+        addNotifications(10);
+
+        setInterval(() => {
+            const notificationList = document.getElementById('notificationList');
+            notificationList.innerHTML = generateRandomNotification() + notificationList.innerHTML;
+        }, 30000);
+
+        document.querySelectorAll('.list-group-item[data-filter]').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const filter = e.target.dataset.filter;
+                document.querySelectorAll('.list-group-item[data-type]').forEach(item => {
+                    if (filter === 'all' || item.dataset.type === filter) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                document.querySelectorAll('.list-group-item[data-filter]').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                e.target.classList.add('active');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var dropdownSubmenus = document.querySelectorAll('.dropdown-submenu > a');
+            dropdownSubmenus.forEach(function(dropdownSubmenu) {
+                dropdownSubmenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    
+                    var submenu = this.nextElementSibling;
+                    var allSubmenus = document.querySelectorAll('.dropdown-submenu .dropdown-menu');
+                    
+                    allSubmenus.forEach(function(menu) {
+                        if (menu !== submenu) {
+                            menu.style.display = 'none';
+                        }
+                    });
+                    
+                    if (submenu.style.display === 'block') {
+                        submenu.style.display = 'none';
+                    } else {
+                        submenu.style.display = 'block';
+                    }
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>

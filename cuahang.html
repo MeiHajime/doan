@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa hàng</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./CuaHang/cuahang.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+    <header class="bg-info py-3">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12 col-md-3 d-flex align-items-center">
+              <a href="doannhom9.html">
+                <img src="./footerandheaderimages/LOGOWEB.png" alt="Logo" class="img-fluid" style="height: 150px;">
+              </a>
+            </div>
+      
+            <div class="col-12 col-md-6 my-2 my-md-0 d-flex align-items-center justify-content-md-center">
+              <div class="input-group">
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="bi bi-grid-3x3-gap"></i>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="doannhom9.html">Trang chủ</a></li>
+                      <li class="dropdown-submenu">
+                          <a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cửa hàng</a>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="cuahang.html">Cửa hàng</a></li>
+                            <li><a class="dropdown-item" href="xuhuongmuasam.html">Xu hướng mua sắm - Theo ngày</a></li>
+                            <li><a class="dropdown-item" href="xuhuongmuasam.html">Xu hướng mua sắm - Sách hot-Giảm sâu</a></li>
+                            <li><a class="dropdown-item" href="bangxh.html">Bảng xếp hạng</a></li>
+                            <li><a class="dropdown-item" href="muahang.html">Mua hàng</a></li>
+                          </ul>
+                      </li>
+                      <li><a class="dropdown-item" href="gioithieu.html">Giới thiệu</a></li>
+                  </ul>
+                  <input type="text" class="form-control" placeholder="Write something here..." aria-label="Search">
+                  <button class="btn btn-danger" type="submit" onclick="filterProducts('Search')">Search</button>
+                </div>
+          </div>
+    
+      
+            <div class="col-12 col-md-3 d-flex justify-content-md-end justify-content-center mt-2 mt-md-0">
+              <div class="text-center me-3">
+                <a href="thongbao.html" class="text-decoration-none text-dark">
+                  <i class="bi bi-bell fs-4"></i>
+                  <p class="mb-0 small">Thông báo</p>
+                </a>
+              </div>
+              <div class="text-center me-3">
+                <a href="giohang.html" class="text-decoration-none text-dark">
+                  <i class="bi bi-bag fs-4"></i>
+                  <p class="mb-0 small">Giỏ hàng</p>
+                </a>
+              </div>
+              <div class="text-center">
+                <a href="dangnhapdangki.html" class="text-decoration-none text-dark">
+                  <i class="bi bi-person fs-4"></i>
+                  <p class="mb-0 small">Tài khoản</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    <section class="mt-5">
+        <div class="container-fluid">
+            <div class="row align-items-start">
+                <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+                    <div class="d-flex flex-column justify-content-between h-100">
+                        <div class="banner-container mb-3">
+                            <img src="./image2/Banner-Lịch-Tô-Màu.png" class="img-fluid side-banner" alt="Banner 1">
+                        </div>
+                        <div class="banner-container">
+                            <img src="./image2/Banner.png" class="img-fluid side-banner" alt="Banner 2">
+                        </div>
+    
+                        <div class="list-slider mt-3">
+                            <h5 class="fw-bold">Nhóm Sản Phẩm</h5>
+                            <form>
+                                <div class="form-check">
+                                    <input type="radio" id="thieuNhi1" name="sanpham" class="form-check-input" value="thieunhi">
+                                    <label for="thieuNhi1" class="form-check-label">Thiếu nhi</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="sachHoc1" name="sanpham" class="form-check-input" value="sachhoc">
+                                    <label for="sachHoc1" class="form-check-label">Sách học tập</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="vanHoc1" name="sanpham" class="form-check-input" value="vanhoc">
+                                    <label for="vanHoc1" class="form-check-label">Văn học</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="tamLy1" name="sanpham" class="form-check-input" value="tamly">
+                                    <label for="tamLy1" class="form-check-label">Tâm lý - Kỹ năng sống</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="mangaComic1" name="sanpham" class="form-check-input" value="mangacomic">
+                                    <label for="mangaComic1" class="form-check-label">Manga - Comic</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="kinhTe1" name="sanpham" class="form-check-input" value="kinhte">
+                                    <label for="kinhTe1" class="form-check-label">Kinh tế</label>
+                                </div>
+                            </form>
+                            <hr>
+                            <h5 class="fw-bold">Giá</h5>
+                            <form>
+                                <div class="form-check">
+                                    <input type="radio" id="thieuNhi1" name="sanpham" class="form-check-input" value="0-150000">
+                                    <label for="thieuNhi1" class="form-check-label">0đ-150.000đ</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="sachHoc1" name="sanpham" class="form-check-input" value="150001-300000">
+                                    <label for="sachHoc1" class="form-check-label">150.000đ-300.000đ</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="vanHoc1" name="sanpham" class="form-check-input" value="300001-500000">
+                                    <label for="vanHoc1" class="form-check-label">300.000đ-500.000đ</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="tamLy1" name="sanpham" class="form-check-input" value="500001-700000">
+                                    <label for="tamLy1" class="form-check-label">500.000đ-700.000đ</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="mangaComic1" name="sanpham" class="form-check-input" value="700001+">
+                                    <label for="mangaComic1" class="form-check-label">700.000đ-Trở lên</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-9 col-md-8 col-sm-12">
+                    <div class="banner-container mb-4">
+                        <img src="./image2/Banner-Sách-hay-tặng-thầy-cô-ngày-20-11.png" class="img-fluid main-banner" alt="Banner sản phẩm">
+                    </div>
+    
+                    <div class="filter-bar d-flex justify-content-between align-items-center bg-light p-3 mb-3">
+                        <div>
+                            <label for="sort" class="fw-bold me-2">Sắp xếp theo:</label>
+                            <select id="sort" class="form-select d-inline-block w-auto">
+                                <option value="price-asc">Giá tăng dần</option>
+                                <option value="price-desc">Giá giảm dần</option>
+                            </select>
+                            <select id="sort" class="form-select d-inline-block w-auto">
+                                <option value="price-asc">Tổng 24 sản phẩm</option>
+                            </select>
+                        </div>
+                        <div>
+                            <span class="fw-bold me-2">Tổng số sản phẩm:</span>
+                            <span id="total-products" class="text-primary">94</span>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="thieunhi" data-price-range="150001-300000">
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp có hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">20%</span>
+                                <a href="#">
+                                    <img src="./image2/Nexus.png" class="card-img-top" alt="Sản phẩm Nexus">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Nexus - Lược sử của những thông tin</h6>
+                                    <p class="card-text text-danger"><b>256,000đ</b></p>
+                                    <p class="card-text text-muted"><del>325,600đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="sachhoctap" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp Có Hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">5%</span>
+                                <a href="#">
+                                    <img src="./image2/HoaHocTro3.png" class="card-img-top" alt="Hoa Học Trò">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Hoa Học Trò - Số 1444 - Chào Tháng 11, Gà Bông Ơi...</h6>
+                                    <p class="card-text text-danger"><b>19,000đ</b></p>
+                                    <p class="card-text text-muted"><del>20,000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="vanhoc" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp Có Hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">13%</span>
+                                <a href="#">
+                                    <img src="./image1/damnghilai.PNG" class="card-img-top" alt="Hoa Học Trò">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Lược sử nước Việt bằng tranh</h6>
+                                    <p class="card-text text-danger"><b>121,800đ</b></p>
+                                    <p class="card-text text-muted"><del>140,000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="tamlykynangsong" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp Có Hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">16%</span>
+                                <a href="#">
+                                    <img src="./Muahang/gocnhoconang.png" class="card-img-top" alt="Hoa Học Trò">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Góc nhỏ có nắng</h6>
+                                    <p class="card-text text-danger"><b>57,120đ</b></p>
+                                    <p class="card-text text-muted"><del>68.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="mangacomic" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp Có Hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">23%</span>
+                                <a href="#">
+                                    <img src="./image2/chiasetutraitim-bia.jpg.png" class="card-img-top" alt="Hoa Học Trò">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Chia sẻ từ Trái Tim(thích Pháp Hòa)</h6>
+                                    <p class="card-text text-danger"><b>129,360đ</b></p>
+                                    <p class="card-text text-muted"><del>168,000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="kinhte" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp Có Hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">13%</span>
+                                <a href="#">
+                                    <img src="./image2/8935244826487.jpg.png" class="card-img-top" alt="Hoa Học Trò">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Búp Sen xanh(Tái bản 2020)</h6>
+                                    <p class="card-text text-danger"><b>62.640đ</b></p>
+                                    <p class="card-text text-muted"><del>72.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="kinhte" data-price-range="150001-300000"> 
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp Có Hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">18%</span>
+                                <a href="#">
+                                    <img src="./image2/_2024_-thay_doi_ti_hon_hieu_qua_bat_ngo-tb8-02.jpg.png" class="card-img-top" alt="Hoa Học Trò">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Atomics-Habit-Thay đổi tí hon hiệu quả bất ngờ</h6>
+                                    <p class="card-text text-danger"><b>154,980đ</b></p>
+                                    <p class="card-text text-muted"><del>189,000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="thieunhi" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp Có Hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">23%</span>
+                                <a href="#">
+                                    <img src="./image2/8935278605546.jpg.png" class="card-img-top" alt="Hoa Học Trò">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">30 Tuổi-Tuổi mới chỉ bắt đầu</h6>
+                                    <p class="card-text text-danger"><b>103.950đ</b></p>
+                                    <p class="card-text text-muted"><del>135.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="sachhoctap" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp Có Hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">5%</span>
+                                <a href="#">
+                                    <img src="./image2/1445-1018_1.jpg.png" class="card-img-top" alt="Hoa Học Trò">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Hoa học trò-Số 1445-Món Quà lấp lánh mùa hiến chương</h6>
+                                    <p class="card-text text-danger"><b>19.000đ</b></p>
+                                    <p class="card-text text-muted"><del>20.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="vanhoc" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp Có Hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">23%</span>
+                                <a href="#">
+                                    <img src="./image2/1445-1018_1.jpg.png" class="card-img-top" alt="Hoa Học Trò">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Manifest-7 Bước để thay đổi cuộc đời của bạn mãi mãi</h6>
+                                    <p class="card-text text-danger"><b>68,530đ</b></p>
+                                    <p class="card-text text-muted"><del>89,000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="vanhoc" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp Có Hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">25%</span>
+                                <a href="#">
+                                    <img src="./image2/9786043775662.jpg.png" class="card-img-top" alt="Hoa Học Trò">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Giáo trình chuẩn HSK 1(Tái bản 2023)</h6>
+                                    <p class="card-text text-danger"><b>148,500đ</b></p>
+                                    <p class="card-text text-muted"><del>198,000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="1" data-category="tamlykynangsong" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="badge bg-primary text-white position-absolute top-0 start-0 m-3">Sắp Có Hàng</span>
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">5%</span>
+                                <a href="#">
+                                    <img src="./image2/dau-an-hoang-gia_bia_tap-10-dd.jpg.png" class="card-img-top" alt="Hoa Học Trò">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Dấu ấn hoàng gia-Tập 10</h6>
+                                    <p class="card-text text-danger"><b>28,500đ</b></p>
+                                    <p class="card-text text-muted"><del>30,000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">5%</span>
+                                <a href="#">
+                                    <img src="./image2/8935278605546.jpg.png" class="card-img-top" alt="Giáo Trình">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Giáo Trình chuẩn YCT-Hàn Quốc</h6>
+                                    <p class="card-text text-danger"><b>19.000đ</b></p>
+                                    <p class="card-text text-muted"><del>20.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">23%</span>
+                                <a href="#">
+                                    <img src="./image1/yeunhungdieukohoanhao.PNG" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Yêu những điều ko hoàn hảo</h6>
+                                    <p class="card-text text-danger"><b>68.530đ</b></p>
+                                    <p class="card-text text-muted"><del>89.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">13%</span>
+                                <a href="#">
+                                    <img src="./image1/hanoi.PNG" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Hà Nội 36 Phố Phường-Thạch Lam</h6>
+                                    <p class="card-text text-danger"><b>121.800đ</b></p>
+                                    <p class="card-text text-muted"><del>140.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">16%</span>
+                                <a href="#">
+                                    <img src="./image1/48nguyentac.PNG" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">48 Nguyên tắc chủ yếu của nguyền lực</h6>
+                                    <p class="card-text text-danger"><b>57.120đ</b></p>
+                                    <p class="card-text text-muted"><del>68.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">23%</span>
+                                <a href="#">
+                                    <img src="./image1/Prepare.PNG" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Prepare Student's Book</h6>
+                                    <p class="card-text text-danger"><b>129.360đ</b></p>
+                                    <p class="card-text text-muted"><del>168.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">13%</span>
+                                <a href="#">
+                                    <img src="./image1/bosachkechuyencuocdoi.PNG" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Những nhà bác học nổi tiếng</h6>
+                                    <p class="card-text text-danger"><b>62.640đ</b></p>
+                                    <p class="card-text text-muted"><del>72.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="150001-300000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">18%</span>
+                                <a href="#">
+                                    <img src="./image1/don'tworry.PNG" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Don't worry,tớ là Capy!</h6>
+                                    <p class="card-text text-danger"><b>154.890đ</b></p>
+                                    <p class="card-text text-muted"><del>189.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">23%</span>
+                                <a href="#">
+                                    <img src="./image1/stopoverthinking.PNG" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Stop Overthinhking - Sống tự do ko lo âu</h6>
+                                    <p class="card-text text-danger"><b>103.950đ</b></p>
+                                    <p class="card-text text-muted"><del>135.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">5%</span>
+                                <a href="#">
+                                    <img src="./image1/slamdunk.PNG" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">SLAM DUNK - Bản kỷ niệm 22 năm</h6>
+                                    <p class="card-text text-danger"><b>19.000đ</b></p>
+                                    <p class="card-text text-muted"><del>20.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">50%</span>
+                                <a href="#">
+                                    <img src="./image2/Dau-an-hoang-gia.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Dấu ấn hoàng gia-Tap 4</h6>
+                                    <p class="card-text text-danger"><b>15.000đ</b></p>
+                                    <p class="card-text text-muted"><del>30.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="150000-300000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">15%</span>
+                                <a href="#">
+                                    <img src="./image2/Luc-biet-xuyen-khong-thi-qua-muon.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Lúc biết xuyên không thì đã muộn-Tặng kèm card bo góc</h6>
+                                    <p class="card-text text-danger"><b>174.500đ</b></p>
+                                    <p class="card-text text-muted"><del>183.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="2" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">27%</span>
+                                <a href="#">
+                                    <img src="./image2/Mindset-thao-tung-tam-ly.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Mindset Thuật thao túng tâm lý</h6>
+                                    <p class="card-text text-danger"><b>101.400đ</b></p>
+                                    <p class="card-text text-muted"><del>139.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="150000-300000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">18%</span>
+                                <a href="#">
+                                    <img src="./image2/nexus-b_a-m_m_1.jpg.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Nexus-Lược sử của những thông tin từ thời kỳ đồ đá đến trí tuệ nhân tạo</h6>
+                                    <p class="card-text text-danger"><b>266.500đ</b></p>
+                                    <p class="card-text text-muted"><del>325.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="300001-500000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">23%</span>
+                                <a href="#">
+                                    <img src="./image2/Combo-Sinh-hoc.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">COMBO Sách nhân tố Enzyme Tập 1-4</h6>
+                                    <p class="card-text text-danger"><b>326.114đ</b></p>
+                                    <p class="card-text text-muted"><del>416.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="300001-500000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">13%</span>
+                                <a href="#">
+                                    <img src="./image2/Mindset-for-ielts.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Mindsets for IELTS - Foundation - Students - Book</h6>
+                                    <p class="card-text text-danger"><b>396.180đ</b></p>
+                                    <p class="card-text text-muted"><del>426.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="150001-300000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">16%</span>
+                                <a href="#">
+                                    <img src="./image2/kinh-te-hoc-vi-mo.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Kinh tế học vĩ mô</h6>
+                                    <p class="card-text text-danger"><b>253.440đ</b></p>
+                                    <p class="card-text text-muted"><del>288.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">5%</span>
+                                <a href="#">
+                                    <img src="./image2/Hoa-hoc-tro.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Hoa học trò-Số 1443</h6>
+                                    <p class="card-text text-danger"><b>19.000đ</b></p>
+                                    <p class="card-text text-muted"><del>20.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">13%</span>
+                                <a href="#">
+                                    <img src="./image2/Ban-chat-cua-con-nguoi.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Bản chất của con người</h6>
+                                    <p class="card-text text-danger"><b>99.000đ</b></p>
+                                    <p class="card-text text-muted"><del>110.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">18%</span>
+                                <a href="#">
+                                    <img src="./image2/Nanh-trang.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Nanh Trắng</h6>
+                                    <p class="card-text text-danger"><b>64.980đ</b></p>
+                                    <p class="card-text text-muted"><del>118.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">23%</span>
+                                <a href="#">
+                                    <img src="./image2/Stolen-focux.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Stolen Focus-Johann Hari</h6>
+                                    <p class="card-text text-danger"><b>139.750đ</b></p>
+                                    <p class="card-text text-muted"><del>215.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">15%</span>
+                                <a href="#">
+                                    <img src="./image2/Ve-hanh-phuc-trong-an-yen.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Vẽ hạnh phúc trong an yên</h6>
+                                    <p class="card-text text-danger"><b>55.900đ</b></p>
+                                    <p class="card-text text-muted"><del>86.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="150001-300000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">55%</span>
+                                <a href="#">
+                                    <img src="./image2/Ngu-phap-tieng-anh.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Ngữ pháp Tiếng Anh</h6>
+                                    <p class="card-text text-danger"><b>159.000đ</b></p>
+                                    <p class="card-text text-muted"><del>390.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">25%</span>
+                                <a href="#">
+                                    <img src="./image2/Nhat-ky-trong-tu.png" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Nhật ký trong tù-Hồ Chí Minh</h6>
+                                    <p class="card-text text-danger"><b>148.500đ</b></p>
+                                    <p class="card-text text-muted"><del>198.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 mb-4 product-item" data-page="3" style="display: none;" data-price-range="0-150000">
+                            <div class="card position-relative">
+                                <span class="discount-badge position-absolute top-0 end-0 m-3">5%</span>
+                                <a href="#">
+                                    <img src="./image1/hieuvetraitim.PNG" class="card-img-top" alt="yêu">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Hiệu vẽ Trái Tim</h6>
+                                    <p class="card-text text-danger"><b>28.500đ</b></p>
+                                    <p class="card-text text-muted"><del>30.000đ</del></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination d-flex justify-content-center">
+                        <button class="btn btn-outline-danger mx-1 page-btn" data-page="1">1</button>
+                        <button class="btn btn-outline-danger mx-1 page-btn" data-page="2">2</button>
+                        <button class="btn btn-outline-danger mx-1 page-btn" data-page="3">3</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-secondary text-white py-4">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0 d-flex align-items-center">
+              <i class="bi bi-envelope-fill fs-4 me-2"></i>
+              <span class="fw-semibold">ĐĂNG KÝ NHẬN BẢN TIN</span>
+            </div>
+      
+            <div class="col-md-8">
+              <form class="d-flex justify-content-center justify-content-md-end align-items-center">
+                <input
+                  type="email"
+                  class="form-control form-control-lg mb-2 mb-md-0 text-white"
+                  placeholder="Nhập địa chỉ email của bạn"
+                  aria-label="Email"
+                  aria-describedby="emailHelp"
+                  name="email"
+                  id="email"
+                  required
+                />
+                <button class="btn btn-orange btn-sm px-4" type="submit">Đăng ký</button>
+              </form>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <footer class="py-4" style="background-color: white;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <img src="./footerandheaderimages/LOGOWEB.png" alt="Logo" class="img-fluid mb-3" style="max-width: 100%;">
+              <p class="text-muted">
+                Phòng học B3 303, Toà nhà B, Đại Học Vinh, TP Vinh, Nghệ An. Địa chỉ 182 Lê Duẩn, Bến Thuỷ, Nghệ An.
+              </p>
+              <p class="text-muted">
+                Group9ThreeGuys.com nhận đặt hàng trực tuyến và giao hàng tận nơi. KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống cửa hàng trên toàn quốc.
+              </p>
+              <div class="d-flex gap-2">
+                <a href="#"><img src="./footerandheaderimages/googleplayicon.png" alt="Google Play" style="height: 40px;"></a>
+                <a href="#"><img src="./footerandheaderimages/ appstoreicon.png" alt="App Store" style="height: 40px;"></a>
+              </div>
+            </div>
+      
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-6 col-md-3">
+                  <h5 class="fw-bold mb-3">Dịch vụ</h5>
+                  <ul class="list-unstyled text-muted">
+                    <li><a href="dieukhoandichvu.html" class=" text-decoration-none">Điều khoản sử dụng</a></li>
+                    <li><a href="chinhsachbaomat.html" class=" text-decoration-none">Chính sách bảo mật</a></li>
+                    <li><a href="chinhsachthanhtoan.html" class=" text-decoration-none">Chính sách thanh toán</a></li>
+                    <li><a href="gioithieu.html" class=" text-decoration-none">Giới thiệu về cửa hàng</a></li>
+                    <li><a href="gioithieu.html" class=" text-decoration-none">Hệ thống trung tâm mua bán</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-6 col-md-3">
+                  <h5 class="fw-bold mb-3">Hỗ trợ</h5>
+                  <ul class="list-unstyled text-muted">
+                    <li><a href="chinhsachdoitrahoantien.html" class=" text-decoration-none">Chính sách đổi - trả - hoàn tiền</a></li>
+                    <li><a href="chinhsachdoitrahoantien.html" class=" text-decoration-none">Chính sách bảo hành - bồi hoàn</a></li>
+                    <li><a href="chinhsachbaomat.html" class=" text-decoration-none">Chính sách vận chuyển</a></li>
+                    <li><a href="chinhsachthanhtoan.html" class=" text-decoration-none">Chính sách khách sỉ</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-6 col-md-3">
+                  <h5 class="fw-bold mb-3">Tài khoản của tôi</h5>
+                  <ul class="list-unstyled text-muted">
+                    <li><a href="dangnhapdangki.html" class=" text-decoration-none">Đăng nhập/Tạo mới tài khoản</a></li>
+                    <li><a href="gioithieu.html" class=" text-decoration-none">Thay đổi địa chỉ khách hàng</a></li>
+                    <li><a href="gioithieu.html" class=" text-decoration-none">Chi tiết tài khoản</a></li>
+                    <li><a href="chinhsachbaomat.html" class=" text-decoration-none">Lịch sử mua hàng</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-12 col-md-3">
+                  <h5 class="fw-bold mb-3">Liên hệ</h5>
+                  <ul class="list-unstyled text-muted">
+                    <li><i class="bi bi-geo-alt-fill"></i> 182 Lê Duẩn, Bến Thuỷ, Vinh, Nghệ An</li>
+                    <li><i class="bi bi-envelope-fill"></i> dogeinabath2005@gmail.com</li>
+                    <li><i class="bi bi-telephone-fill"></i> 0369769365</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-12 mt-4">
+                <h5 class="fw-bold mb-3">Vị trí của chúng tôi</h5>
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.110234938366!2d105.69317477437131!3d18.659048664931326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3139cddf0bf20f23%3A0x86154b56a284fa6d!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBWaW5o!5e0!3m2!1svi!2s!4v1736414738893!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+              <div class="mt-4">
+                <h5 class="fw-bold mb-3">Hỗ trợ thanh toán</h5>
+                <div class="d-flex flex-wrap gap-3">
+                  <img src="./footerandheaderimages/mastercard.png" alt="Mastercard" style="height: 49px;">
+                  <img src="./footerandheaderimages/ visa.png" alt="Visa" style="height: 49px;">
+                  <img src="./footerandheaderimages/vnpay.png" alt="VNPay" style="height: 49px;">
+                  <img src="./footerandheaderimages/momo.png" alt="MoMo" style="height: 49px;">
+                  <img src="./footerandheaderimages/ shopee.png" alt="Shopee Pay" style="height: 49px;">
+                </div>
+              </div>
+      
+              <div class="mt-4">
+                <h5 class="fw-bold mb-3">Mạng xã hội</h5>
+                <div class="d-flex gap-3">
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="#" class="text-muted fs-4"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./CuaHang/cuahang.js"></script>
+</body>
+</html>
